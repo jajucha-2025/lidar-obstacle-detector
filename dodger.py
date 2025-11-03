@@ -89,6 +89,26 @@ def detect_obstacles(th, d):
 
     return points
 
+def get_obstacles_min_dist_point(th, d, obstacles):
+    min_points = []
+    for obs in obstacles:
+        coords = np.where((th >= obs[0][0]) & (th <= obs[1][0]))
+        min_dist = float('inf')
+        min_point = None
+        for crd in coords:
+            if d[crd] < min_dist:
+                min_dist = d[crd]
+                min_point = [th[crd], d[crd]]
+        min_points.append(min_point, axis=0)
+    return min_points
+
+# obstacles:
+# [
+#     [[theta1_1, dist1_1], [theta1_2, dist1_2]],  # obstacle 1
+#     [[theta2_1, dist2_1], [theta2_2, dist2_2]],  # obstacle 2
+#     ...
+# ]
+
 # Main dodger function
 def dodger_main(th, d):
     obstacles = detect_obstacles(th, d)
