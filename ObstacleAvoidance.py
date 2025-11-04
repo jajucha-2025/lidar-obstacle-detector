@@ -2,20 +2,20 @@ import math
 import numpy as np
 import time
 
-wheelbase_m = 0.18 # 차량 휠베이스 (m)
-danger_dist_cm = 60.0 # 장애물 위험 거리 (cm)
+wheelbase_m = 0.18 # 차량 휠베이스 (m) - 튜링 필요
+danger_dist_cm = 60.0 # 장애물 위험 거리 (cm) - 튜링 필요
 fov_rad = math.radians(90.0) # LiDAR 시야각 (라디안)
-max_steer_deg = 20.0 # 최대 조향각 (도)
-lookahead_m = 0.5 # 회피 예측 거리 (m)
-vehicle_width_cm = 25.0 # 차량 폭 (cm)
-min_clearance_cm = 80.0 # 최소 통로 폭 (cm)
+max_steer_deg = 20.0 # 최대 조향각 (도) - 튜링 필요
+lookahead_m = 0.5 # 회피 예측 거리 (m) - 튜링 필요
+vehicle_width_cm = 25.0 # 차량 폭 (cm) - 튜링 필요
+min_clearance_cm = 80.0 # 최소 통로 폭 (cm) - 튜링 필요
 
 # state 값에 넣어야 할 듯
 recovery_mode = False # 탈출 모드 플래그
 recovery_start = 0.0 # 탈출 시작 시간
 recovery_phase = 0 # 탈출 단계: 0=후진, 1=회전 
-recovery_duration_back = 1.5 # 후진 시간 (초)
-recovery_duration_spin = 2.0 # 회전 시간 (초)
+recovery_duration_back = 1.5 # 후진 시간 (초) - 튜링 필요
+recovery_duration_spin = 2.0 # 회전 시간 (초) - 튜링 필요
 recovery_turn_dir = 1 # 회전 방향: +1=좌, -1=우
 
 # -----------------------------
